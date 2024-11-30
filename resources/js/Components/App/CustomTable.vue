@@ -109,7 +109,7 @@ const total = computed(() => props.items.meta.total);
                     <div>
                         <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
                             <Link v-for="page in props.items.meta.links" :key="page.label" :href="page.url || '#'"
-                                :class="[
+                                preserve-scroll preserve-state :class="[
                                     'relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium',
                                     page.active ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
                                 ]" v-html="page.label">

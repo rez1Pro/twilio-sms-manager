@@ -47,7 +47,9 @@ class SendMessageController extends Controller
      */
     public function store(StoreSendMessageRequest $request)
     {
-        //
+        SendMessage::create($request->validated());
+
+        return redirect()->route('send-messages.index')->with('success', 'Message sent successfully');
     }
 
     /**

@@ -11,7 +11,7 @@ class StoreSendMessageRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class StoreSendMessageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'sender' => 'required|string|max:255',
+            'receiver' => 'required|string|max:255',
+            'message' => 'required|string|max:255',
         ];
     }
 }

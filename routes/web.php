@@ -23,7 +23,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     })->name('dashboard');
 
     Route::get('/send-messages', [SendMessageController::class, 'index'])->name('send-messages.index');
-
+    Route::post('/send-messages', [SendMessageController::class, 'store'])->name('send-messages.store');
     Route::get('/recieved-messages', function () {
         return Inertia::render('RecievedMessages/Index');
     })->name('recieved-messages.index');
